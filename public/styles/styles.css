@@ -1,3 +1,82 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+nav {
+  margin-bottom: 2%;
+  background-color: #0070bf;
+  font-style: white;
+}
+
+.nav-link {
+  color: white;
+}
+
+.navbar-brand {
+  color: white;
+}
+
+#submit {
+  background-color: #0070bf;
+  color: white;
+}
+
+.btn {
+  background-color: #0070bf;
+  color: white;
+}
+
+#add-calories {
+  margin-top: 4%;
+}
+
+#add-calories {
+  margin-top: 6%;
+}
+
+#startBtn {
+  background-color: #0070bf;
+  color: white;
+}
+
+footer {
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #0070bf;
+  text-align: center;
+}
+
+footer a {
+  color: white;
+}
+
+.list-group-item {
+  font-family: sans-serif;
+  color: #0070bf;
+}
+
+.remove {
+  background-color: #0070bf;
+}
+
+.formBtn {
+  background-color: #0070bf;
+  color: white;
+}
+
+.caloriePerMeal {
+  float: left;
+  width: 33.33%;
+}
+.info {
+  font-family: sans-serif;
+}
+
+#add-calories {
+  background-color: #0070bf;
+  color: white;
+  margin-top: 4%;
+}

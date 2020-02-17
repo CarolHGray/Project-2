@@ -1,4 +1,4 @@
-var db = require("../models");
+ar db = require("../models");
 
 module.exports = function(app) {
   // Load index page
@@ -9,73 +9,64 @@ module.exports = function(app) {
         learn: "Learn More",
         about: "About Us",
         workout: "Workout Tutorials",
-        options: "Healthy Dinning",
+        options: "Healthy Dining",
         appName: "Health Fit",
-        examples: dbExamples
       });
     });
   });
 
-
-  // Load form page 
+//load form page
   app.get("/form", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.render("form", {
-        msg: "Welcome!",
-        msg: "Make a Choice For a Better Tomorrow Today!",
         learn: "Learn More",
         about: "About Us",
         workout: "Workout Tutorials",
-        options: "Healthy Dinning",
+        options: "Healthy Dining",
         appName: "Health Fit",
         examples: dbExamples
       });
     });
   });
 
-
-  // Load logger page
-  app.get("/log", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("log", {
-        msg: "Welcome!",
-        examples: dbExamples
+  //load summary page
+ app.get("/summary", function(req, res) {
+  db.User.findOne({ limit: 1, order: [["createdAt", "DESC"]] }).then(function(dbUser) {
+      res.render("summary", {
+        learn: "Learn More",
+        about: "About Us",
+        workout: "Workout Tutorials",
+        options: "Healthy Dining",
+        appName: "Health Fit",
+        user: dbUser
       });
     });
-  });
+  }); 
 
-    // Load summary page
-    app.get("/summary", function(req, res) {
+    //load about us
+    app.get("/about-us", function(req, res) {
       db.Example.findAll({}).then(function(dbExamples) {
-        res.render("summary", {
-          msg: "Welcome!",
-          examples: dbExamples
+        res.render("about-us", {
+          learn: "Learn More",
+          about: "About Us",
+          workout: "Workout Tutorials",
+          options: "Healthy Dining",
+          appName: "Health Fit",
         });
       });
     });
 
-  // Load example page and pass in an example by id
-  app.get("/user-page/:id", function(req, res) {
-    db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.render("example", {
-        example: dbExample
-      });
-    });
-  });
-
-
-  // Load about us page
-  app.get("/about-us", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.render("about-us", {
-        msg: "Welcome!",
-        examples: dbExamples
-      });
-    });
-  });
-
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
-    res.render("404");
+    res.render("404",{
+      learn: "Learn More",
+      about: "About Us",
+      workout: "Workout Tutorials",
+      options: "Healthy Dining",
+      appName: "Health Fit",
+    });
+    
   });
 };
+
+
